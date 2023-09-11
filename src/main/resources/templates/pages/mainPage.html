@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <link href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <form th:method="POST" th:action="@{/CarController/addCarInfo}" th:object="${carModel}">
+            <label for="carCountry">Введите страну производителя: </label>
+            <input type="text" name="carCountry" id="carCountry" th:field="*{carCountry}">
+
+            <label for="carBrand">Введите бренд: </label>
+            <input type="text" name="carBrand" id="carBrand" th:field="*{carBrand}">
+
+            <label for="carModel">Введить модель авто: </label>
+            <input type="text" name="carModel" id="carModel" th:field="*{carBrandModel}">
+
+            <label for="carBodyIndex">Введите название кузова: </label>
+            <input type="text" name="carBodyIndex" id="carBodyIndex" th:field="*{carBodyIndex}">
+
+            <label for="carBodyType">Введите тип кузова: </label>
+            <input type="text" name="carBodyType" id="carBodyType" th:field="*{carBodyType}">
+
+            <label for="carYearStart">Введите год начала производства: </label>
+            <input type="text" name="carYearStart" id="carYearStart" th:field="*{carYearStart}">
+
+            <label for="carYearEnd">Введите год окончания производства: </label>
+            <input type="text" name="carYearEnd" id="carYearEnd" th:field="*{carYearEnd}">
+
+            <label for="carDescription">Введите описание авто: </label>
+            <textarea name="carDescription " id="carDescription" th:field="*{carDescription}"></textarea>
+
+            <input type="submit" value="Отправить">
+        </form>
+    </div>
+</body>
+</html>
