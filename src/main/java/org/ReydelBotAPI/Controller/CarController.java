@@ -12,15 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/CarController")
 public class CarController {
     private final CarService carService;
-
     public CarController(CarService carService) {
         this.carService = carService;
     }
 
-    @GetMapping("/mainPage")
+    @GetMapping("/addCarPage")
     public String mainPage(@ModelAttribute("carModel") CarModel carModel){
 
-        return "pages/mainPage";
+        return "pages/addCarPage";
     }
 
     @PostMapping("/addCarInfo")
@@ -28,6 +27,7 @@ public class CarController {
 
         carService.addCarInfo(carModel);
 
-        return "redirect:mainPage";
+        return "redirect:addCarPage";
     }
+
 }

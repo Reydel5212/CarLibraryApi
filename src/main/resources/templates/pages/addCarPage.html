@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="pageContainer">
+        <form th:method="POST" th:action="@{/CarController/addCarInfo}" th:object="${carModel}" class="formContainer">
+            <h3 class="containerElement">Добавить автомобиль</h3>
+            <label for="carCountry" class="containerElement">Введите страну производителя: </label>
+            <input type="text" name="carCountry" id="carCountry" th:field="*{carCountry}" class="containerElement containerInput">
+
+            <label for="carBrand" class="containerElement">Введите бренд: </label>
+            <input type="text" name="carBrand" id="carBrand" th:field="*{carBrand}" class="containerElement containerInput">
+
+            <label for="carModel" class="containerElement">Введить модель авто: </label>
+            <input type="text" name="carModel" id="carModel" th:field="*{carBrandModel}" class="containerElement containerInput">
+
+            <label for="carBodyIndex" class="containerElement">Введите название кузова: </label>
+            <input type="text" name="carBodyIndex" id="carBodyIndex" th:field="*{carBodyIndex}" class="containerElement containerInput">
+
+            <label for="carBodyType" class="containerElement">Введите тип кузова: </label>
+            <input type="text" name="carBodyType" id="carBodyType" th:field="*{carBodyType}" class="containerElement containerInput">
+
+            <label for="carYearStart" class="containerElement">Введите год начала производства: </label>
+            <input type="text" name="carYearStart" id="carYearStart" th:field="*{carYearStart}" class="containerElement containerInput">
+
+            <label for="carYearEnd" class="containerElement">Введите год окончания производства: </label>
+            <input type="text" name="carYearEnd" id="carYearEnd" th:field="*{carYearEnd}" class="containerElement containerInput">
+
+            <label for="carDescription" class="containerElement">Введите описание авто: </label>
+            <textarea name="carDescription " id="carDescription" th:field="*{carDescription}" class="containerElement containerInput"></textarea>
+
+            <input type="submit" value="Отправить" class="containerElement containerButton">
+        </form>
+    </div>
+</body>
+</html>

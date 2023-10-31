@@ -58,8 +58,6 @@ public class CarModel {
         this.carBrand = carBrand;
     }
 
-
-
     public String getCarBodyIndex() {
         return carBodyIndex;
     }
@@ -100,12 +98,26 @@ public class CarModel {
         this.carDescription = carDescription;
     }
 
-
     public String getCarBrandModel() {
         return carBrandModel;
     }
 
     public void setCarBrandModel(String carBrandModel) {
         this.carBrandModel = carBrandModel;
+    }
+
+    @Override
+    public String toString() {
+        return "CarModel{" +
+                "carId=" + carId +
+                ", carCountry='" + carCountry + '\'' +
+                ", carBrand='" + carBrand + '\'' +
+                ", carBrandModel='" + carBrandModel + '\'' +
+                ", carBodyIndex='" + carBodyIndex + '\'' +
+                ", carBodyType='" + carBodyType + '\'' +
+                ", carYearStart=" + carYearStart +
+                ", carYearEnd=" + carYearEnd +
+                ", carDescription='" + carDescription + '\'' +
+                '}';
     }
 }

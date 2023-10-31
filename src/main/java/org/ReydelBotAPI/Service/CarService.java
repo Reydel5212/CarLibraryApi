@@ -17,7 +17,6 @@ public class CarService {
         this.carRepository = carRepository;
     }
 
-    //show info
     public List<CarModel> getCarList(){
         return carRepository.findAll();
     }
@@ -27,8 +26,23 @@ public class CarService {
         return list.orElse(null);
     }
 
+    public CarModel getCarModelsByCarBrand(String carBrand){
+        Optional<CarModel> list = carRepository.findCarByCarBrand(carBrand);
+
+        return list.orElse(null);
+    }
     @Transactional
     public void addCarInfo(CarModel carModel){
         carRepository.save(carModel);
+    }
+
+    @Transactional
+    public void setCarBodyServMeth(CarModel carModel){
+        carModel.setCarBodyType("coupe");
+        carRepository.save(carModel);
+    }
+    @Transactional
+    public void deleteCar(){
+        carRepository.deleteCarModelById();
     }
 }

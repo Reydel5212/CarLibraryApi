@@ -21,9 +21,14 @@ public class CarRestController {
         return carService.getCarList();
     }
 
-    @GetMapping("/{id}/showCar")
+    @GetMapping("/{id}/showCarById")
     public CarModel getCarById(@PathVariable("id") int id){
         return carService.getCarById(id);
+    }
+
+    @GetMapping("/{carBrand}/showCarByBrand")
+    public CarModel getCarByCarBrand(@PathVariable("carBrand") String carBrand){
+        return carService.getCarModelsByCarBrand(carBrand);
     }
 
 }

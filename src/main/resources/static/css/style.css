@@ -1,9 +1,26 @@
 *{
     margin: 0;
 }
-.container{
+.pageContainer{
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+.formContainer{
+    width: 40%;
+    height: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.containerElement{
+    margin-bottom: 2%;
+}
+.containerInput{
+    border: 2px #4646bf solid;
+    border-radius: 5px;
+    padding: 5px;
 }
